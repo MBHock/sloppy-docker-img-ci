@@ -8,17 +8,19 @@ you can use this docker image to execute sloppy cli from GitLab.
 For example:
 In the gitlab-ci.yml you can use the following lines to deploy your application
 
+<pre>
 deploy-app-in-sloppy:
-  image: mhock/sloppy-cli
-  stage: <stage-name>
+  image: mhock/sloppy-cli:latest
+  stage: [stage-name]
   script:
-    - sloppy change -img <image-name> <app-name>
+    - sloppy change -img [image-name] [app-name]
+</pre>
 
-
+<pre>
 where as:
   image-name: name of the docker image, which has been build by the gitlab build pipeline
   app-name: is the name of your application in the sloppy platform
-  
+</pre>
 
 For more details about the sloppy cli please follow the following link: https://kb.sloppy.io/en/collections/156128-features#cli-command-reference
 
